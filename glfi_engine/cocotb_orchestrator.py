@@ -118,10 +118,7 @@ class GenericCampaignMaster:
                 except Exception as e: 
                     pass
                 
-            if not use_ai:
-                self.input_vectors.append(vec)
-            else:
-                self.input_vectors.append(ai_vectors[vec_idx] if vec_idx < len(ai_vectors) else vec)
+            self.input_vectors.append(vec)
 
             # اعمال کلاک یا ایجاد تاخیر
             if self.clock_signal: 
