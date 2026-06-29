@@ -36,6 +36,21 @@ def _run_glfi_task(task_id: str, session_id: str, workspace_path, top_module: st
 
         progress.set_progress(task_id, 5, f"Found {total_targets} gates ({total_faults} fault targets)")
 
+        if total_targets == 0:
+            progress.set_progress(task_id, 100, "No injectable gates found")
+            result = {
+                "status": "success",
+                "message": f"No injectable gates found in design.",
+                "data": {
+                    "results_csv": "",
+                    "total_faults": 0,
+                    "vulnerable": 0,
+                    "masked": 0
+                }
+            }
+            progress.set_status(task_id, "completed", result=result)
+            return
+
         # Step 2: Instrumentation
         progress.set_progress(task_id, 7, "Instrumenting netlist")
         subprocess.run([
