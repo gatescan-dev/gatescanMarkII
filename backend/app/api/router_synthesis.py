@@ -49,6 +49,15 @@ def _run_synth_task(task_id: str, files_data: list, filenames: list, top_module:
     except Exception as e:
         progress.set_status(task_id, "failed", error=str(e))
 
+from app.services.top_detector import detect_top_module
+
+@router.post("/detect-top")
+async def detect_top(files: List[UploadFile] = File(...)):
+    files_data = [await f.read() for f in files]
+    filenames = [f.filename for f in files]
+    name = detect_top_module(files_data, filenames)
+    return {"top_module": name}
+
 @router.post("/run")
 async def run_synthesis(
     files: List[UploadFile] = File(...),
