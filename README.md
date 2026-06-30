@@ -5,6 +5,9 @@
 > **شماره نسخه:** ۲.۰  
 > **موضوع:** آناتومی و فیزیولوژی پلتفرم تزریق خطای مبتنی بر هوش مصنوعی (RAG / LLM Agent-Multi)
 
+🌐 **Live Instance:** [https://faass.viracoai.net](https://faass.viracoai.net)  
+📦 **GitHub:** [https://github.com/gatescan-dev/gatescanMarkII](https://github.com/gatescan-dev/gatescanMarkII)
+
 GateScan Mark II represents a leap from **blind statistical testing** (Mark I) to **intelligent behavioral verification**. It uses an **Actor-Critic architecture** with **DeepSeek LLM agents** to understand HDL designs, generate targeted testbenches, and verify them automatically — all before injecting stuck-at faults into your FPGA or ASIC designs.
 
 ---
@@ -133,8 +136,10 @@ GateScan Mark II represents a leap from **blind statistical testing** (Mark I) t
 
 ### 1. Visit the Platform
 ```
-http://154.91.170.5:8080
+https://faass.viracoai.net
 ```
+
+> 🖥️ **Direct access:** `http://154.91.170.5:8080` (if DNS not yet propagated)
 
 ### 2. Step-by-Step Workflow
 
